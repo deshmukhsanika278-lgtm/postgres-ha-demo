@@ -30,3 +30,7 @@ dist-ssr
 
 # Local backup files
 *.backup
+
+# Database backup files and local safety copies
+*.dump
+safety-backups/

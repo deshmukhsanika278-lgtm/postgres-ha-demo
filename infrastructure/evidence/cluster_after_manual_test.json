@@ -1,0 +1,34 @@
+{
+    "status": "connected",
+    "cluster_name": "postgres-ha",
+    "fetched_at": "2026-11-11T08:26:23.012Z",
+    "total_nodes": 3,
+    "members": [
+        {
+            "name": "node1",
+            "role": "replica",
+            "state": "streaming",
+            "host": "172.18.0.10",
+            "port": 5432,
+            "timeline": 7,
+            "lag": 0
+        },
+        {
+            "name": "node2",
+            "role": "replica",
+            "state": "streaming",
+            "host": "172.18.0.11",
+            "port": 5432,
+            "timeline": 7,
+            "lag": 0
+        },
+        {
+            "name": "node3",
+            "role": "leader",
+            "state": "running",
+            "host": "172.18.0.12",
+            "port": 5432,
+            "timeline": 7
+        }
+    ]
+}

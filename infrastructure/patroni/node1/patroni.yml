@@ -1,0 +1,63 @@
+scope: postgres-ha
+namespace: /service/
+name: node1
+
+restapi:
+  listen: 0.0.0.0:8008
+  connect_address: node1:8008
+
+etcd3:
+  hosts: etcd:2379
+
+bootstrap:
+  dcs:
+    ttl: 30
+    loop_wait: 10
+    retry_timeout: 10
+    maximum_lag_on_failover: 1048576
+    postgresql:
+      use_pg_rewind: true
+      use_slots: true
+      parameters:
+        wal_level: replica
+        hot_standby: "on"
+        max_wal_senders: 10
+        max_replication_slots: 10
+        wal_log_hints: "on"
+  initdb:
+    - encoding: UTF8
+    - data-checksums
+  users:
+    replicator:
+      password: REPLACE_WITH_LOCAL_SECRET
+      options:
+        - replication
+    admin:
+      password: REPLACE_WITH_LOCAL_SECRET
+      options:
+        - createrole
+        - createdb
+
+postgresql:
+  listen: 0.0.0.0:5432
+  connect_address: node1:5432
+  data_dir: /var/lib/postgresql/data
+  bin_dir: /usr/lib/postgresql/17/bin
+  authentication:
+    superuser:
+      username: postgres
+      password: REPLACE_WITH_LOCAL_SECRET
+    replication:
+      username: replicator
+      password: REPLACE_WITH_LOCAL_SECRET
+    rewind:
+      username: postgres
+      password: REPLACE_WITH_LOCAL_SECRET
+  parameters:
+    unix_socket_directories: /var/run/postgresql
+
+tags:
+  nofailover: false
+  noloadbalance: false
+  clonefrom: false
+  nosync: false

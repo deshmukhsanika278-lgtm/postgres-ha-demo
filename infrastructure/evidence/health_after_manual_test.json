@@ -1,0 +1,10 @@
+{
+    "status": "connected",
+    "message": "PostgreSQL connection successful",
+    "database": {
+        "server_ip": "172.18.0.12",
+        "is_replica": false,
+        "database_name": "postgres",
+        "checked_at": "2026-11-11T08:26:23.096Z"
+    }
+}

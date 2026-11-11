@@ -1,0 +1,41 @@
+{
+    "status": "success",
+    "count": 7,
+    "records": [
+        {
+            "id": 71,
+            "message": "Post-failover write test - node3 primary - November 11 2026",
+            "created_at": "2026-11-11T08:24:44.552Z"
+        },
+        {
+            "id": 38,
+            "message": "Manual failover verification - November 11 2026",
+            "created_at": "2026-11-11T08:22:41.726Z"
+        },
+        {
+            "id": 37,
+            "message": "Backend API write test - November 11 2026",
+            "created_at": "2026-11-11T08:19:55.608Z"
+        },
+        {
+            "id": 4,
+            "message": "Testing live dashboard after CSS restoration",
+            "created_at": "2026-11-10T13:05:28.320Z"
+        },
+        {
+            "id": 3,
+            "message": "Inserted from PostgreSQL HA dashboard",
+            "created_at": "2026-11-10T12:55:41.983Z"
+        },
+        {
+            "id": 2,
+            "message": "Automatic failover test - November 10 2026",
+            "created_at": "2026-11-10T11:12:30.246Z"
+        },
+        {
+            "id": 1,
+            "message": "PostgreSQL HA recovery test successful",
+            "created_at": "2026-11-10T11:04:49.682Z"
+        }
+    ]
+}
